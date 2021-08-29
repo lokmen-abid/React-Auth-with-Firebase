@@ -5,6 +5,7 @@ import Singup from "./Singup";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Dashbord from "./Dashbord";
 import Login from "./Login";
+import PrivateRoute from "./PrivateRoute"
 
 
 function App() {
@@ -17,7 +18,7 @@ function App() {
         <Router>
           <AuthProvider>
             <Switch>
-              <Route exact path="/" component={Dashbord}/>
+             <PrivateRoute exact path="/" component={Dashbord} />
               <Route path="/signup" component={Singup} />
               <Route path="/login" component={Login} />
 *            </Switch>
